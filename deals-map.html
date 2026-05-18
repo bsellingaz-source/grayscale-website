@@ -16,7 +16,7 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:#000;font-family:'Barlow',sans-serif;color:#fff;overflow:hidden;}
 
-  /* —— NAV (matches main site exactly) —— */
+  /* ââ NAV (matches main site exactly) ââ */
   .nav{
     position:fixed;top:0;left:0;right:0;z-index:100;
     display:flex;align-items:center;justify-content:space-between;
@@ -45,10 +45,10 @@
     .mobile-toggle{display:block;}
   }
 
-  /* —— GLOBE CONTAINER —— */
+  /* ââ GLOBE CONTAINER ââ */
   #globe-container{width:100vw;height:100vh;padding-top:64px;}
 
-  /* —— OVERLAY PANELS —— */
+  /* ââ OVERLAY PANELS ââ */
   #stats-panel{
     position:fixed;bottom:24px;left:24px;z-index:10;
     background:rgba(26,28,30,0.90);backdrop-filter:blur(16px);
@@ -106,7 +106,7 @@
   @keyframes spin{to{transform:rotate(360deg);}}
   .load-text{font-size:13px;color:#666;letter-spacing:1px;text-transform:uppercase;}
 
-  /* —— BACK LINK —— */
+  /* ââ BACK LINK ââ */
   #back-home{
     position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:10;
     background:rgba(184,101,42,0.9);backdrop-filter:blur(12px);
@@ -157,9 +157,9 @@
 <div id="globe-container"></div>
 
 <div id="stats-panel">
-  <div class="s-row"><span class="s-label">Deals Closed</span><span class="s-val">146</span></div>
+  <div class="s-row"><span class="s-label">Deals Closed</span><span class="s-val">150</span></div>
   <div class="s-div"></div>
-  <div class="s-row"><span class="s-label">States</span><span class="s-val">11</span></div>
+  <div class="s-row"><span class="s-label">States</span><span class="s-val">12</span></div>
   <div class="s-div"></div>
   <div class="s-row"><span class="s-label">Primary Market</span><span class="s-val" style="font-size:14px">Phoenix Metro</span></div>
 </div>
@@ -173,7 +173,7 @@
   <div class="lg-item"><div class="lg-dot" style="background:#818cf8"></div> Indiana</div>
   <div class="lg-item"><div class="lg-dot" style="background:#fb923c"></div> Nevada</div>
   <div class="lg-item"><div class="lg-dot" style="background:#fbbf24"></div> Colorado</div>
-  <div class="lg-item"><div class="lg-dot" style="background:#f87171"></div> Other (OH, GA, NC, TX, FL)</div>
+  <div class="lg-item"><div class="lg-dot" style="background:#f87171"></div> Other (OH, GA, NC, TX, FL, AL)</div>
 </div>
 
 <div id="tooltip">
@@ -193,8 +193,12 @@
 
 <script src="https://unpkg.com/globe.gl@2.27.2/dist/globe.gl.min.js"></script>
 <script>
-// —— DEAL DATA ——
+// ââ DEAL DATA ââ
 const deals = [
+  {addr:"8805 N 28th Ave, Phoenix, AZ 85051",lat:33.5560,lng:-112.1196,date:"May 15, 2026",state:"AZ",market:"Phoenix Metro"},
+  {addr:"1029 Albany St, Indianapolis, IN 46203",lat:39.7395,lng:-86.1280,date:"May 14, 2026",state:"IN",market:"Indiana"},
+  {addr:"1385 Atkins Trimm Blvd, Hoover, AL 35226",lat:33.3825,lng:-86.8085,date:"May 13, 2026",state:"AL",market:"Other"},
+  {addr:"1142 E McMurray Blvd, Casa Grande, AZ 85122",lat:32.8748,lng:-111.7390,date:"May 11, 2026",state:"AZ",market:"Pinal County"},
   {addr:"6901 W Mariposa St, Phoenix, AZ 85033",lat:33.4878,lng:-112.2050,date:"May 8, 2026",state:"AZ",market:"Phoenix Metro"},
   {addr:"1002 Harlan St, Indianapolis, IN 46203",lat:39.7510,lng:-86.1390,date:"May 7, 2026",state:"IN",market:"Indiana"},
   {addr:"1144 E McMurray Blvd, Casa Grande, AZ 85122",lat:32.8740,lng:-111.7290,date:"May 7, 2026",state:"AZ",market:"Pinal County"},
@@ -349,7 +353,7 @@ const marketColors = {
   "Colorado":"#fbbf24","Other":"#f87171",
 };
 
-// —— BUILD GLOBE ——
+// ââ BUILD GLOBE ââ
 const world = Globe()
   .globeImageUrl('https://unpkg.com/three-globe@2.27.3/example/img/earth-night.jpg')
   .bumpImageUrl('https://unpkg.com/three-globe@2.27.3/example/img/earth-topology.png')
@@ -392,7 +396,7 @@ const world = Globe()
     if(d){
       tt.querySelector('.t-addr').textContent = d.addr;
       tt.querySelector('.t-date').textContent = 'Closed: ' + d.date;
-      tt.querySelector('.t-state').textContent = d.market + ' • ' + d.state;
+      tt.querySelector('.t-state').textContent = d.market + ' â¢ ' + d.state;
       tt.style.opacity = 1;
       document.body.style.cursor = 'pointer';
     } else {
@@ -424,7 +428,7 @@ world.controls().dampingFactor = 0.1;
 
 setTimeout(() => document.getElementById('loading').classList.add('hide'), 1500);
 
-// —— CONTROLS ——
+// ââ CONTROLS ââ
 let isSpinning = true;
 function resetView(){ world.pointOfView({lat:34,lng:-112,altitude:1.8},1000); }
 function toggleSpin(){
