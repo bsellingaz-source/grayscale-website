@@ -157,9 +157,9 @@
 <div id="globe-container"></div>
 
 <div id="stats-panel">
-  <div class="s-row"><span class="s-label">Deals Closed</span><span class="s-val">188</span></div>
+  <div class="s-row"><span class="s-label">Deals Closed</span><span class="s-val">210</span></div>
   <div class="s-div"></div>
-  <div class="s-row"><span class="s-label">States</span><span class="s-val">13</span></div>
+  <div class="s-row"><span class="s-label">States</span><span class="s-val">14</span></div>
   <div class="s-div"></div>
   <div class="s-row"><span class="s-label">Primary Market</span><span class="s-val" style="font-size:14px">Phoenix Metro</span></div>
 </div>
@@ -173,7 +173,7 @@
   <div class="lg-item"><div class="lg-dot" style="background:#818cf8"></div> Indiana</div>
   <div class="lg-item"><div class="lg-dot" style="background:#fb923c"></div> Nevada</div>
   <div class="lg-item"><div class="lg-dot" style="background:#fbbf24"></div> Colorado</div>
-  <div class="lg-item"><div class="lg-dot" style="background:#f87171"></div> Other (OH, GA, NC, TX, FL, AL, TN, MO)</div>
+  <div class="lg-item"><div class="lg-dot" style="background:#f87171"></div> Other (OH, GA, NC, TX, FL, AL, TN, MO, WA)</div>
 </div>
 
 <div id="tooltip">
@@ -195,6 +195,28 @@
 <script>
 // ── DEAL DATA ──
 const deals = [
+  {"addr":"45 Sawmill Rd, Whiteland, IN 46184","lat":39.5504,"lng":-86.1016,"date":"Nov 16, 2026","state":"IN","market":"Indiana"},
+  {"addr":"716 S Cardinal St, Gilbert, AZ 85296","lat":33.3375,"lng":-111.7327,"date":"Nov 13, 2026","state":"AZ","market":"Phoenix Metro"},
+  {"addr":"733 E Carla Vista Dr, Chandler, AZ 85225","lat":33.3111,"lng":-111.8301,"date":"Nov 13, 2026","state":"AZ","market":"Phoenix Metro"},
+  {"addr":"1702 E Eva St, Phoenix, AZ 85020","lat":33.5696,"lng":-112.0457,"date":"Nov 13, 2026","state":"AZ","market":"Phoenix Metro"},
+  {"addr":"8207 E Madero Ave, Mesa, AZ 85209","lat":33.3715,"lng":-111.6574,"date":"Nov 10, 2026","state":"AZ","market":"Phoenix Metro"},
+  {"addr":"8234 W Illini St, Phoenix, AZ 85043","lat":33.4151,"lng":-112.237,"date":"Nov 9, 2026","state":"AZ","market":"Phoenix Metro"},
+  {"addr":"4404 W Seldon Ln, Glendale, AZ 85302","lat":33.5613,"lng":-112.1544,"date":"Oct 28, 2026","state":"AZ","market":"Phoenix Metro"},
+  {"addr":"7623 W Pierson St, Phoenix, AZ 85033","lat":33.5069,"lng":-112.2248,"date":"Oct 28, 2026","state":"AZ","market":"Phoenix Metro"},
+  {"addr":"4904 Staughton Dr, Indianapolis, IN 46226","lat":39.842,"lng":-86.086,"date":"Oct 28, 2026","state":"IN","market":"Indiana"},
+  {"addr":"312 W 36th St, Vancouver, WA 98660","lat":45.6479,"lng":-122.6743,"date":"Oct 15, 2026","state":"WA","market":"Other"},
+  {"addr":"3653 Burwick Pl, Antioch, TN 37013","lat":36.0601,"lng":-86.6722,"date":"Oct 15, 2026","state":"TN","market":"Other"},
+  {"addr":"5381 Heather Cir, Mason, OH 45040","lat":39.359,"lng":-84.2834,"date":"Oct 9, 2026","state":"OH","market":"Other"},
+  {"addr":"701 N Nantucket St, Chandler, AZ 85225","lat":33.3155,"lng":-111.8168,"date":"Oct 7, 2026","state":"AZ","market":"Phoenix Metro"},
+  {"addr":"615 Anderson Ln, Madison, TN 37115","lat":36.2562,"lng":-86.7139,"date":"Oct 7, 2026","state":"TN","market":"Other"},
+  {"addr":"7038 N 24th Ave, Phoenix, AZ 85021","lat":33.5398,"lng":-112.1112,"date":"Sep 30, 2026","state":"AZ","market":"Phoenix Metro"},
+  {"addr":"2574 Regina Ave, Columbus, OH 43204","lat":39.9352,"lng":-83.0659,"date":"Sep 29, 2026","state":"OH","market":"Other"},
+  {"addr":"3150 Mizpah Church Rd, Rural Hall, NC 27045","lat":36.2404,"lng":-80.2934,"date":"Sep 29, 2026","state":"NC","market":"Other"},
+  {"addr":"11122 N 76th Ave, Peoria, AZ 85345","lat":33.5868,"lng":-112.2223,"date":"Sep 21, 2026","state":"AZ","market":"Phoenix Metro"},
+  {"addr":"1512 Finley Ave, Indianapolis, IN 46203","lat":39.7333,"lng":-86.1341,"date":"Sep 17, 2026","state":"IN","market":"Indiana"},
+  {"addr":"2911 E Caballero St, Mesa, AZ 85213","lat":33.4237,"lng":-111.7685,"date":"Sep 15, 2026","state":"AZ","market":"Phoenix Metro"},
+  {"addr":"718 Dutchmans Ct, Hermitage, TN 37076","lat":36.1962,"lng":-86.6225,"date":"Sep 11, 2026","state":"TN","market":"Other"},
+  {"addr":"10311 W Prairie Hills Cir, Sun City, AZ 85351","lat":33.6218,"lng":-112.2722,"date":"Sep 10, 2026","state":"AZ","market":"Phoenix Metro"},
   {"addr":"692 Southview Dr, Old Hickory, TN 37138","lat":36.2597,"lng":-86.6481,"date":"Sep 1, 2026","state":"TN","market":"Other"},
   {"addr":"17431 N 36th St, Phoenix, AZ 85032","lat":33.6449,"lng":-112.0026,"date":"Aug 26, 2026","state":"AZ","market":"Phoenix Metro"},
   {"addr":"304 W McNeil St, Phoenix, AZ 85041","lat":33.3577,"lng":-112.0991,"date":"Aug 25, 2026","state":"AZ","market":"Phoenix Metro"},
